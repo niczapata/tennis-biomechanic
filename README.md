@@ -1,114 +1,51 @@
-# Tennis Biomechanic Analyzer
+# Tennis Biomechanic Analysis Project
 
-An advanced tennis motion analysis system that uses computer vision and machine learning to analyze player movements, provide real-time feedback, and generate personalized training plans.
+## Descripción
+Este proyecto es un sistema integral de análisis de movimiento en tenis que utiliza visión por computadora y machine learning para analizar los movimientos del jugador, proporcionar retroalimentación en tiempo real y generar recomendaciones de entrenamiento personalizadas.
 
-## Features
+## Estructura del Proyecto
+- `main.py` - Punto de entrada principal
+- `motion_analyzer.py` - Analizador de movimiento y pose
+- `learning_agent.py` - Agente de aprendizaje automático
+- `dashboard.py` - Panel de visualización y reportes
 
-- **Real-time Video Analysis**: Captures and analyzes tennis movements using your webcam
-- **Pose Detection**: Uses MediaPipe to track key body joints during play
-- **Movement Metrics**: Calculates joint angles, movement speed, balance, and stroke classification
-- **Performance Scoring**: Rates form and efficiency in real-time
-- **Fatigue Monitoring**: Estimates player fatigue levels during sessions
-- **Self-Learning Agent**: Analyzes performance data to identify strengths and weaknesses
-- **Training Plan Generation**: Creates personalized training plans based on analysis
-- **Visual Dashboard**: Generates comprehensive performance reports with charts and graphs
+## Componentes Principales
 
-## How It Works
+### TennisMotionAnalyzer
+Procesa la alimentación de video y extrae métricas de pose:
+- Detección de pose en tiempo real con MediaPipe
+- Extracción de métricas biomecánicas
+- Análisis de ángulos articulares
+- Clasificación de tipos de golpe
 
-The system consists of three main components:
+### SelfLearningAgent
+Analiza datos de rendimiento y genera insights:
+- Identificación de tendencias y patrones
+- Análisis de fortalezas y debilidades
+- Generación de planes de entrenamiento personalizados
+- Seguimiento de progreso
 
-### 1. TennisMotionAnalyzer
-Analyzes video feed in real-time to extract detailed movement metrics:
-- Joint angle calculations (elbows, shoulders)
-- Movement speed tracking
-- Balance assessment
-- Stroke type classification (forehand, backhand, serve)
+### TennisPerformanceDashboard
+Visualiza métricas y crea reportes:
+- Generación de dashboards visuales
+- Comparación con benchmarks
+- Exportación de reportes en JSON
+- Visualización de progreso
 
-### 2. SelfLearningAgent
-Processes historical data to provide insights:
-- Trend identification
-- Pattern recognition
-- Strength and weakness analysis
-- Personalized improvement suggestions
-- Progress tracking over time
-
-### 3. TennisPerformanceDashboard
-Visualizes performance data:
-- Overall performance scoring
-- Category-based ratings (Form, Efficiency, Consistency)
-- Progress tracking charts
-- Stroke distribution analysis
-- Training recommendations
-
-## Installation
-
+## Instalación
 ```bash
 pip install opencv-python mediapipe numpy pandas matplotlib scipy
 ```
 
-## Usage
+## Uso
+Ejecutar el análisis:
+```bash
+python main.py
+```
 
-1. Run the Jupyter notebook:
-   ```bash
-   jupyter notebook tennis_project.ipynb
-   ```
-
-2. Execute the cells to start analysis:
-   - The system will access your webcam
-   - Real-time analysis will be displayed
-   - Press 'q' to stop the analysis
-
-3. View results:
-   - Performance dashboard saved as `tennis_analysis_dashboard.png`
-   - Detailed report saved as `tennis_report_*.json`
-
-## Requirements
-
-- Python 3.7+
-- OpenCV
-- MediaPipe
-- NumPy
-- Pandas
-- Matplotlib
-- SciPy
-
-## Technical Details
-
-### Pose Detection
-The system uses MediaPipe's Pose solution to detect 33 body landmarks, focusing on:
-- Wrists, elbows, and shoulders for stroke analysis
-- Hip positions for balance assessment
-- Full body tracking for comprehensive movement analysis
-
-### Metrics Calculated
-- Joint angles (elbow angles, shoulder rotation)
-- Movement speed and acceleration
-- Balance distribution
-- Stroke classification
-- Form scoring
-- Efficiency ratings
-- Fatigue estimation
-
-### Data Analysis
-The self-learning agent processes movement history to:
-- Identify performance trends
-- Recognize movement patterns
-- Compare with benchmark data
-- Generate actionable insights
-- Create personalized training schedules
-
-## Example Output
-
-The system generates:
-1. Real-time video feedback with overlaid metrics
-2. Performance dashboard with visual charts
-3. JSON reports with detailed analysis
-4. Personalized training plans
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+## Tecnologías
+- **Visión por Computadora**: OpenCV
+- **Detección de Pose**: MediaPipe
+- **Análisis de Datos**: NumPy, Pandas, SciPy
+- **Visualización**: Matplotlib
+- **Machine Learning**: Algoritmos de aprendizaje automático
