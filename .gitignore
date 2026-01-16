@@ -1,1 +1,24 @@
+
+# Ignore environment and secrets
+.env
+.env.*
+*.env
+
+# Ignore Python cache and virtualenvs
+__pycache__/
+.venv/
+venv/
+env/
+ENV/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
 .aider*
